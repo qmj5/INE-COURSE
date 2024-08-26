@@ -8,10 +8,14 @@ def group_dict(player):
     # Then, append the player's information to the list for that position.  
     # Finally, return the result dictionary.
     for player_info in player:
+        # create a dictionary with the keys and values from the player's information
         player_dict = dict(zip(Keys,player_info))
+        # get the player's position from the dictionary.
         postion = player_dict["Position"]
+        # if the position is not in the dictionary, add it with an empty list as its value.
         if postion not in group_by_dict:
             group_by_dict[postion] = []
+        # append the player's information to the list for that position in the result dictionary. 
         group_by_dict[postion].append(player_info)
     return group_by_dict
 
